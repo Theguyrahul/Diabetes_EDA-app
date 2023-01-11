@@ -1,0 +1,26 @@
+
+        *{
+            background-color: bisque;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Poppins',sans-serif;
+            font-weight: 900;
+        }
+        h2{
+            color: red;
+        }
+        p#true{
+            text-align: center;
+            font-family: 'Poppins',sans-serif;
+            font-weight: 500;
+            color: red;
+            font-size: 1.5rem;  
+        }
+        p#false{
+            text-align: center;
+            font-family: 'Poppins',sans-serif;
+            font-weight: 500;
+            color: black;
+            font-size: 1.5rem; 
+        }
