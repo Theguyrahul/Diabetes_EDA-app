@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes_home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+<body>
+    <h1>Diabetes Prediction Form</h1>
+    <hr>
+    <h2>Please fill and submit the form to display prediction result</h2>
+    <hr>
+    <section class="input_form">
+    <form action="/predict" method="post" id="diabetes_form">
+
+        <div class="row">
+            <div class="column">
+                <div class="ques">
+                    <p>Do you have <strong>High Blood Pressure</strong>?</p>
+                    <input type="radio" name ="highbp" id="hbp1" value="1">
+                    <label for="hbp1">Yes</label>
+                    <input type="radio" name ="highbp" id="hbp0" value="0">
+                    <label for="hbp0">No</label>
+                
+                </div>
+            
+                <div class="ques">
+                    <p>Do you have <strong>High Cholesterol</strong>?</p>
+                    <input type="radio" name ="highchol" id="hch1" value="1">
+                    <label for="hch1">Yes</label>
+                    <input type="radio" name ="highchol" id="hch0" value="0">
+                    <label for="hch0">No</label>
+                </div>
+                
+
+                <div class="ques">
+                    <p>Do you have <strong>checked</strong> your <strong>cholesterol level</strong> in last 5 years ?</p>
+                    <input type="radio" name ="highcholch" id="hchc1" value="1">
+                    <label for="hchc1">Yes</label>
+                    <input type="radio" name ="highcholch" id="hchc0" value="0">
+                    <label for="hchc0">No</label>
+                </div>
+
+                <div class="ques">
+                    <p>Enter your <strong>Body Mass Index</strong>.</p>
+                    Don't know your BMI, calculate it <a href="https://www.calculator.net/bmi-calculator.html" target="_blank">here</a>.
+                    <input type="number" id="BMI" name="BMI">
+                </div>
+
+                <div class="ques">
+                    <p>Have you <strong>smoked</strong> atleast <strong>100 cigarettes</strong> in life ?</p>
+                    <input type="radio" name ="smoker" id="smoke1" value="1">
+                    <label for="smoke1">Yes</label>
+                    <input type="radio" name ="smoker" id="smoke0" value="0">
+                    <label for="smoke0">No</label>
+                </div>
+           
+                <div class="ques">
+                    <p>Have you ever had a <strong>stroke</strong>?</p>
+                    <input type="radio" name ="stroke" id="stroke1" value="1">
+                    <label for="smoke1">Yes</label>
+                    <input type="radio" name ="stroke" id="stroke0" value="0">
+                    <label for="stroke0">No</label>
+                </div>
+
+                <div class="ques">
+                    <p>Do you have any type of <strong>heart diseas or attack</strong>?</p>
+                    <input type="radio" name ="HDA" id="HDA1" value="1">
+                    <label for="HDA1">Yes</label>
+                    <input type="radio" name ="HDA" id="HDA0" value="0">
+                    <label for="HDA0">No</label>
+                </div>
+           
+                <div class="ques">
+                    <p>Do you excercise <strong> daily</strong>?</p>
+                    <input type="radio" name ="phyac" id="phyac1" value="1">
+                    <label for="phyac1">Yes</label>
+                    <input type="radio" name ="phyac" id="phyac0" value="0">
+                    <label for="phyac0">No</label>
+                </div>
+
+                <div class="ques">
+                    <p>Do you consume atleast 1 <strong>fruit</strong> on a <strong> daily basis</strong>?</p>
+                    <input type="radio" name ="frt" id="frt1" value="1">
+                    <label for="frt1">Yes</label>
+                    <input type="radio" name ="frt" id="frt0" value="0">
+                    <label for="frt0">No</label>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="ques">
+                    <p>Do you consume atleast 1 <strong>Vegitable</strong> on a <strong> daily basis</strong>?</p>
+                    <input type="radio" name ="veg" id="veg1" value="1">
+                    <label for="veg1">Yes</label>
+                    <input type="radio" name ="veg" id="veg0" value="0">
+                    <label for="veg0">No</label>
+                </div>
+                
+                <div class="ques">
+                    <p>Is your alcohol consumption high?</p>
+                    <ol>
+                        <li>For adult men having more than 14 drinks per week.</li>
+                        <li>For Woman having more than 7 drinks per week</li>
+                    </ol>
+                    <input type="radio" name ="drink" id="drink1" value="1">
+                    <label for="drink1">Yes</label>
+                    <input type="radio" name ="drink" id="drink0" value="0">
+                    <label for="drink0">No</label>
+                </div>
+                
+                <div class="ques">
+                    <p>Do you have any<strong> health care covarage</strong> like <strong> insurance</strong>?</p>
+                    <input type="radio" name ="ahc" id="ahc1" value="1">
+                    <label for="ahc1">Yes</label>
+                    <input type="radio" name ="ahc" id="ahc0" value="0">
+                    <label for="ahc0">No</label>
+                </div>
+
+                <div class="ques">
+                    <p>Was there a time in the past 12 months, <br>when you needed to see a doctor but could not because of cost?</p>
+                    <input type="radio" name ="docc" id="docc1" value="1">
+                    <label for="docc1">Yes</label>
+                    <input type="radio" name ="docc" id="docc0" value="0">
+                    <label for="docc0">No</label>
+                </div>
+
+                <div class="ques">
+                    <p>Would you say that in general your health is?</p>
+                    <input type="radio" name ="genh" id="genh1" value="1">
+                    <label for="genh1">excellent</label>
+                    <input type="radio" name ="genh" id="genh2" value="2">
+                    <label for="genh2">very good </label>
+                    <input type="radio" name ="genh" id="genh3" value="3">
+                    <label for="genh3">good</label>
+                    <input type="radio" name ="genh" id="genh4" value="4">
+                    <label for="genh4">fair</label>
+                    <input type="radio" name ="genh" id="genh5" value="5">
+                    <label for="genh5">poor</label>
+                </div>
+        
+
+                <div class="ques">
+                    <p>Now thinking about your mental health, which includes <br>
+                        stress, depression, and problems with emotions,<br>
+                        for how many days during the past 30 days <br>
+                        was your mental health not good?</p>
+                    <input type="number" id="menh" name="menh">
+                </div>
+
+                <div class="ques">
+                    <p>Now thinking about your physical health, which includes
+                        physical illness and injury,
+                        for how many days during the past 30 days
+                        was your physical health not good?</p>
+                    <input type="number" id="phyh" name="phyh">
+                </div>
+        
+        </div>
+
+        <div class="column">
+            
+            <div class="ques">
+                <p>Do you have serious difficulty walking or climbing stairs?</p>
+                <input type="radio" name ="diffw" id="diffw1" value="1">
+                <label for="diffw1">Yes</label>
+                <input type="radio" name ="diffw" id="diffw0" value="0">
+                <label for="diffw0">No</label>
+            </div>
+
+            <div class="ques">
+                <p>What is your sex ?</p>
+                <input type="radio" name ="sex" id="sex1" value="1">
+                <label for="diffw1">Male</label>
+                <input type="radio" name ="sex" id="sex0" value="0">
+                <label for="diffw0">Female</label>
+            </div>
+
+            <div class="ques">
+                <p>Select your age category ?</p>
+                <input type="radio" name ="age" id="age1" value="1">
+                <label for="age1">18 to 24 years</label>
+                <input type="radio" name ="age" id="age2" value="2">
+                <label for="age2">25 to 29 years</label>
+                <input type="radio" name ="age" id="age3" value="3">
+                <label for="age3">30 to 34 years</label><br>
+                <input type="radio" name ="age" id="age4" value="4">
+                <label for="age4">35 to 39 years</label>
+                <input type="radio" name ="age" id="age5" value="5">
+                <label for="age5">40 to 44 years</label>
+                <input type="radio" name ="age" id="age6" value="6">
+                <label for="age6">45 to 49 years</label><br>
+                <input type="radio" name ="age" id="age7" value="7">
+                <label for="age7">50 to 54 years</label>
+                <input type="radio" name ="age" id="age8" value="8">
+                <label for="age8">55 to 59 years</label>
+                <input type="radio" name ="age" id="age9" value="9">
+                <label for="age9"> 60 to 64 years</label><br>
+                <input type="radio" name ="age" id="age10" value="10">
+                <label for="age10">65 to 69 years</label>
+                <input type="radio" name ="age" id="age11" value="11">
+                <label for="age11">70 to 74 years</label>
+                <input type="radio" name ="age" id="age12" value="12">
+                <label for="age12">75 to 79 years</label><br>
+                <input type="radio" name ="age" id="age13" value="13">
+                <label for="age13">80 or older</label>
+            </div>
+            
+
+            <div class="ques">
+                <p>What is the highest grade or year of school you completed? </p>
+                <input type="radio" name ="edu" id="edu1" value="1">
+                <label for="edu1">kindergarden / None</label><br>
+                <input type="radio" name ="edu" id="edu2" value="2">
+                <label for="edu2">Elementary</label><br>
+                <input type="radio" name ="edu" id="edu3" value="3">
+                <label for="edu3">Some high school</label><br>
+                <input type="radio" name ="edu" id="edu4" value="4">
+                <label for="edu4">High school graduate</label><br>
+                <input type="radio" name ="edu" id="edu5" value="5">
+                <label for="edu5">1 year to 3 years of college</label><br>
+                <input type="radio" name ="edu" id="edu6" value="6">
+                <label for="edu6">4 years or more of College</label><br>
+            </div>
+
+            <div class="ques">
+                <p> Your annual household income from all sources ?(k==thousand)</p>
+                <input type="radio" name ="inc" id="inc1" value="1">
+                <label for="inc1"> < 80k </label><br>
+                <input type="radio" name ="inc" id="inc2" value="2">
+                <label for="inc2"> < 120k </label><br>
+                <input type="radio" name ="inc" id="inc3" value="3">
+                <label for="inc3"> < 160k </label><br>
+                <input type="radio" name ="inc" id="inc4" value="4">
+                <label for="inc4"> < 200k </label><br>
+                <input type="radio" name ="inc" id="inc5" value="5">
+                <label for="inc5"> < 240k </label><br>
+                <input type="radio" name ="inc" id="inc6" value="6">
+                <label for="inc6"> < 280k </label><br>
+                <input type="radio" name ="inc" id="inc7" value="7">
+                <label for="inc7"> < 320k </label><br>
+                <input type="radio" name ="inc" id="inc8" value="8">
+                <label for="inc8"> more than 320k </label><br>
+            </div>
+        </div>
+    </div>
+        
+        <button type="submit" form="diabetes_form"> Submit </button>
+    </form>
+</section>
+</body>
+</html>

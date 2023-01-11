@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    background-color:bisque;
+    font-family:'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+h1,h2{
+    
+    font-weight: 900;
+    text-align: center;
+}
+
+h2{
+  color: Red;  
+}
+
+.ques,strong,p,label,ol,li,a{
+    background-color: rgba(168, 59, 59, 0.316);
+    border-radius: 4px;
+    color: rgb(6, 6, 6);
+    
+}
+
+form button{
+    position: relative;
+    right:300px;
+    top: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+p,strong{
+    font-size: 1.2rem;
+}
+
+input{
+    background-color: white;
+
+}
+input#BMI,input#menh,input#phyh{
+    position: relative;
+    bottom:10px;
+    left: 10px;
+}
+
+.column {
+float: left;
+width: 33.33%;
+padding: 15px;
+padding: auto ;
+}
+
+/* Clear floats after the columns */
+.row.after{ 
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+.column {
+    width: 100%;
+}
+}
